@@ -16,5 +16,8 @@ return {
 
     -- Python
     "pyright",
+    "black",
+    "flake8",
+    "ruff",
   },
 }
