@@ -44,6 +44,24 @@ local plugins = {
             },
         },
     },
+
+    -- File Explorer
+    {
+        "nvim-tree/nvim-tree.lua",
+        init = function()
+            require("core.utils").load_mappings "NvimTree"
+        end,
+        cmd = {
+            "NvimTreeOpen",
+            "NvimTreeToggle",
+            "NvimTreeFocus",
+            "NvimTreeFindFile",
+            "NvimTreeFindFileToggle",
+        },
+        opts = require "custom.configs.nvim-tree",
+        dependencies = "nvim-tree/nvim-web-devicons",
+    },
+
 }
 
 return plugins

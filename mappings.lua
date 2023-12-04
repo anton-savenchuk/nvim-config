@@ -19,6 +19,13 @@ local M = {
             ["<leader>lf"] = { "<cmd>Format<cr>", "Format", opts = { silent = true } },
         },
     },
+
+    NvimTree = {
+        plugin = true,
+        n = {
+            ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer", opts = { silent = true } },
+        },
+    },
 }
 
 return M
