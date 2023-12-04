@@ -62,6 +62,34 @@ local plugins = {
         dependencies = "nvim-tree/nvim-web-devicons",
     },
 
+    -- Syntax Highlighting
+    {
+        "nvim-treesitter/nvim-treesitter",
+        cmd = {
+            "TSInstall",
+            "TSUninstall",
+            "TSInstallInfo",
+            "TSUpdate",
+            "TSBufEnable",
+            "TSBufDisable",
+            "TSEnable",
+            "TSDisable",
+            "TSModuleInfo",
+            "TSToggle",
+            "TSBufToggle",
+        },
+        opts = require "custom.configs.treesitter",
+        config = function(_, opts)
+            dofile(vim.g.base46_cache .. "syntax")
+            require("nvim-treesitter.configs").setup(opts)
+        end,
+        dependencies = {
+            "JoosepAlviste/nvim-ts-context-commentstring",
+            "windwp/nvim-ts-autotag",
+            "nvim-treesitter/nvim-treesitter-textobjects",
+        },
+    },
+
 }
 
 return plugins
