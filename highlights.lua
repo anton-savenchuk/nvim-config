@@ -9,11 +9,19 @@ M.override = {
     Comment = {
         italic = true,
     },
+    LspReferenceRead = { link = "Underlined" },
+    LspReferenceText = { link = "Underlined" },
+    LspReferenceWrite = { link = "Underlined" },
 }
 
 ---@type HLTable
 M.add = {
     NvimTreeOpenedFolderName = { fg = "green", bold = true },
+    DiffviewDiffAdd = { fg = "black", bg = "green" },
+    DiffviewDiffChange = { fg = "black", bg = "light_grey" },
+    DiffviewDiffModified = { fg = "black", bg = "orange" },
+    DiffviewDiffDelete = { fg = "black", bg = "red" },
+    DiffviewDiffAddAsDelete = { fg = "black", bg = "red" },
 }
 
 return M
