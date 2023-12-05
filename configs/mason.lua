@@ -31,6 +31,6 @@ return {
         "yaml-language-server",
 
         -- Docker
-        "docker_compose_language_service",
+        "docker-compose-language-service",
     },
 }

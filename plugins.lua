@@ -153,6 +153,21 @@ local plugins = {
         "sindrets/diffview.nvim",
         event = "VeryLazy",
     },
+
+    -- Terminal Integration
+    {
+        "akinsho/toggleterm.nvim",
+        init = function()
+            require("core.utils").load_mappings "Toggleterm"
+        end,
+        cmd = {
+            "ToggleTerm",
+            "ToggleTermSendCurrentLine",
+            "ToggleTermSendVisualLines",
+            "ToggleTermSendVisualSelection",
+        },
+        opts = require "custom.configs.toggleterm",
+    },
 }
 
 return plugins

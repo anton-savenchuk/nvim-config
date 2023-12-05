@@ -48,6 +48,13 @@ local M = {
     Git = {
         plugin = true,
         n = {
+            ["<leader>gg"] = {
+                function()
+                    ClickGit()
+                end,
+                "Lazygit",
+                opts = { silent = true },
+            },
             ["<leader>gj"] = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk", opts = { silent = true } },
             ["<leader>gk"] = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk", opts = { silent = true } },
             ["<leader>gl"] = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame", opts = { silent = true } },
@@ -71,6 +78,19 @@ local M = {
                 "Toggle Diffview",
                 opts = { silent = true },
             },
+        },
+    },
+
+    Toggleterm = {
+        plugin = true,
+        n = {
+            ["<leader>tf"] = { "<cmd>ToggleTerm direction=float<cr>", "Float Terminal", opts = { silent = true } },
+            ["<leader>th"] = {
+                "<cmd>ToggleTerm direction=horizontal<cr>",
+                "Horizontal Terminal",
+                opts = { silent = true },
+            },
+            ["<leader>tv"] = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical Terminal", opts = { silent = true } },
         },
     },
 }
