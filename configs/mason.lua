@@ -32,6 +32,5 @@ return {
 
         -- Docker
         "docker_compose_language_service",
-        "dockerls",
     },
 }
