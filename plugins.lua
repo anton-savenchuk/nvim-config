@@ -168,6 +168,24 @@ local plugins = {
         },
         opts = require "custom.configs.toggleterm",
     },
+
+    -- Pretty Diagnostics and Lists
+    {
+        "folke/trouble.nvim",
+        init = function()
+            require("core.utils").load_mappings "Trouble"
+        end,
+        cmd = { "TroubleToggle", "Trouble" },
+        opts = require "custom.configs.trouble",
+        dependencies = "nvim-tree/nvim-web-devicons",
+    },
+
+    -- Highlight, List and Search Todo comments in your projects
+    {
+        "folke/todo-comments.nvim",
+        cmd = { "TodoTrouble", "TodoLocList", "TodoQuickFix", "TodoTelescope" },
+        opts = require "custom.configs.todo-comments",
+    },
 }
 
 return plugins

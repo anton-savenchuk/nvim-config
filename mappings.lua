@@ -93,6 +93,19 @@ local M = {
             ["<leader>tv"] = { "<cmd>ToggleTerm direction=vertical<cr>", "Vertical Terminal", opts = { silent = true } },
         },
     },
+
+    Trouble = {
+        plugin = true,
+        n = {
+            ["<leader>lb"] = { "<cmd>TroubleToggle document_diagnostics<cr>", "Buffer Diagnostics", opts = { silent = true } },
+            ["<leader>lw"] = {
+                "<cmd>TroubleToggle workspace_diagnostics<cr>",
+                "Workspace Diagnostics",
+                opts = { silent = true },
+            },
+            ["<leader>fT"] = { "<cmd>TodoTrouble<cr>", "Todo", opts = { silent = true } },
+        },
+    }
 }
 
 return M
