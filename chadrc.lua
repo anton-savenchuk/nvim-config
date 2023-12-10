@@ -9,6 +9,7 @@ M.ui = {
     lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
     hl_override = highlights.override,
     hl_add = highlights.add,
+    telescope = { style = "borderless" }, -- borderless / bordered
 }
 
 M.plugins = "custom.plugins"

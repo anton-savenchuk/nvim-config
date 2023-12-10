@@ -117,6 +117,36 @@ local M = {
             ["<leader>sd"] = { "<cmd>SessionDelete<cr>", "Delete", opts = { silent = true } },
         },
     },
+
+    Telescope = {
+        plugin = true,
+        n = {
+            ["<leader>fa"] = { "<cmd>Telescope autocommands<cr>", "Autocommmands", opts = { silent = true } },
+            ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Files", opts = { silent = true } },
+            ["<leader>fs"] = { "<cmd>Telescope persisted<cr>", "Sessions", opts = { silent = true } },
+            ["<leader>fm"] = { "<cmd>Telescope marks<cr>", "Marks", opts = { silent = true } },
+            ["<leader>fM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages", opts = { silent = true } },
+            ["<leader>fw"] = { "<cmd>Telescope live_grep<cr>", "Word", opts = { silent = true } },
+            ["<leader>ft"] = { "<cmd>Telescope themes<cr>", "Themes", opts = { silent = true } },
+            ["<leader>fb"] = { "<cmd>Telescope buffers<cr>", "Buffers", opts = { silent = true } },
+            ["<leader>fn"] = {
+                "<cmd>lua require('telescope').extensions.notify.notify()<cr>",
+                "Notify History",
+                opts = { silent = true },
+            },
+            ["<leader>fp"] = { "<cmd>Telescope projects<cr>", "Projects", opts = { silent = true } },
+            ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help", opts = { silent = true } },
+            ["<leader>fk"] = { "<cmd>Telescope keymaps<cr>", "Keymaps", opts = { silent = true } },
+            ["<leader>fC"] = { "<cmd>Telescope commands<cr>", "Commands", opts = { silent = true } },
+            ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent Files", opts = { silent = true } },
+            ["<leader>fH"] = { "<cmd>Telescope highlights<cr>", "Highlights", opts = { silent = true } },
+            ["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Buffer Symbols", opts = { silent = true } },
+            ["<leader>lS"] = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", opts = { silent = true } },
+            ["<leader>go"] = { "<cmd>Telescope git_status<cr>", "Open changed file", opts = { silent = true } },
+            ["<leader>gb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch", opts = { silent = true } },
+            ["<leader>gc"] = { "<cmd>Telescope git_commits<cr>", "Checkout commit", opts = { silent = true } },
+        },
+    },
 }
 
 return M
