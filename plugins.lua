@@ -42,6 +42,14 @@ local plugins = {
                 opts = require "custom.configs.mason",
                 dependencies = "williamboman/mason-lspconfig.nvim",
             },
+            -- Improve Other LSP Functionalities
+            {
+                "nvimdev/lspsaga.nvim",
+                init = function()
+                    require("core.utils").load_mappings "Lspsaga"
+                end,
+                opts = require "custom.configs.lspsaga",
+            },
         },
     },
 

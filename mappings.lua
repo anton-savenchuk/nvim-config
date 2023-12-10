@@ -4,6 +4,8 @@ local M = {
     Mason = {
         plugin = true,
         n = {
+            ["<leader>lj"] = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next Diagnostic", opts = { silent = true }, },
+            ["<leader>lk"] = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Prev Diagnostic", opts = { silent = true }, },
             ["<leader>lm"] = { "<cmd>Mason<cr>", "Mason Installer", opts = { silent = true } },
         },
     },
@@ -17,6 +19,20 @@ local M = {
         },
         v = {
             ["<leader>lf"] = { "<cmd>Format<cr>", "Format", opts = { silent = true } },
+        },
+    },
+
+    Lspsaga = {
+        plugin = true,
+        n = {
+            ["<leader>la"] = { "<cmd>Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
+            ["<leader>lo"] = { "<cmd>Lspsaga outline<cr>", "Code Outline", opts = { silent = true } },
+            ["<leader>lI"] = { "<cmd>Lspsaga incoming_calls<cr>", "Incoming Calls", opts = { silent = true } },
+            ["<leader>lO"] = { "<cmd>Lspsaga outgoing_calls<cr>", "Outgoing Calls", opts = { silent = true } },
+            ["<leader>lr"] = { "<cmd>Lspsaga rename<cr>", "Rename", opts = { silent = true } },
+        },
+        v = {
+            ["<leader>la"] = { "<cmd>Lspsaga code_action<cr>", "Code Action", opts = { silent = true } },
         },
     },
 
