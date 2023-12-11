@@ -47,6 +47,10 @@ M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
     -- lsp_highlight(client, bufnr)
 
+    if client.server_capabilities.signatureHelpProvider then
+        require("nvchad.signature").setup(client)
+    end
+
     if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
         client.server_capabilities.semanticTokensProvider = nil
     end
