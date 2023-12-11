@@ -1,4 +1,6 @@
 ---@type MappingsTable
+local cwd = vim.fn.stdpath "config" .. "/"
+local config_dir = { cwd }
 
 local M = {
     Mason = {
@@ -163,6 +165,56 @@ local M = {
             ["<leader>gc"] = { "<cmd>Telescope git_commits<cr>", "Checkout commit", opts = { silent = true } },
         },
     },
+
+    Neovim = {
+        n = {
+            ["<leader>nf"] = {
+                function()
+                    require("telescope.builtin").find_files {
+                        prompt_title = "Config Files",
+                        search_dirs = config_dir,
+                        cwd = cwd,
+                    }
+                end,
+                "Find Config Files",
+                opts = { silent = true },
+            },
+            ["<leader>ng"] = {
+                function()
+                    require("telescope.builtin").live_grep {
+                        prompt_title = "Config Files",
+                        search_dirs = config_dir,
+                        cwd = cwd,
+                    }
+                end,
+                "Grep Config Files",
+                opts = { silent = true },
+            },
+            ["<leader>nc"] = { "<cmd>NvCheatsheet<cr>", "Cheatsheet", opts = { silent = true }, },
+            ["<leader>ni"] = {
+                function()
+                    if vim.fn.has "nvim-0.9.0" == 1 then
+                        vim.cmd "Inspect"
+                    else
+                        vim.notify("Inspect isn't available in this neovim version", vim.log.levels.WARN,
+                            { title = "Inspect" })
+                    end
+                end,
+                "Inspect",
+                opts = { silent = true },
+            }, -- only available on neovim >= 0.9
+            ["<leader>nm"] = { "<cmd>messages<cr>", "Messages", opts = { silent = true } },
+            ["<leader>nh"] = { "<cmd>checkhealth<cr>", "Health", opts = { silent = true } },
+            ["<leader>nv"] = {
+                function()
+                    local version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+                    return vim.notify(version, vim.log.levels.INFO, { title = "Neovim Version" })
+                end,
+                "Version",
+                opts = { silent = true },
+            },
+        },
+    }
 }
 
 return M
