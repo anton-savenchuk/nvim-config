@@ -214,6 +214,23 @@ local M = {
                 opts = { silent = true },
             },
         },
+    },
+
+    MarkdownPreview = {
+        plugin = true,
+        n = {
+            ["<leader>m"] = {
+                function()
+                    if vim.bo.filetype == "markdown" then
+                        vim.cmd "MarkdownPreviewToggle"
+                    else
+                        vim.notify("Only available in markdown", vim.log.levels.WARN, { title = "Markdown-Preview" })
+                    end
+                end,
+                "Markdown Preview",
+                opts = { silent = true },
+            },
+        },
     }
 }
 
